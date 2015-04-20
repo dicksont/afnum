@@ -1,0 +1,28 @@
+{
+  "name": "afnum",
+  "main": "lib/afnum.js",
+  "description": "Alpha-numeric [e.g. spreadsheet] coordinate system",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "~4.11.1",
+    "gulp-bump": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dicksont/afnum.git"
+  },
+  "keywords": [
+    "letter",
+    "number",
+    "table",
+    "excel",
+    "spreadsheet",
+    "coordinate"
+  ],
+  "author": "Dickson Tam <dicksont650@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dicksont/afnum/issues"
+  },
+  "homepage": "https://github.com/dicksont/afnum"
+}

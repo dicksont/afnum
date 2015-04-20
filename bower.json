@@ -1,0 +1,27 @@
+{
+  "name": "afnum",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dicksont/afnum",
+  "authors": [
+    "Dickson Tam <dicksont650@gmail.com>"
+  ],
+  "description": "Alpha-numeric [e.g. spreadsheet] coordinate system",
+  "main": "lib/afnum.js",
+  "keywords": [
+    "letter",
+    "number",
+    "table",
+    "excel",
+    "spreadsheet",
+    "coordinate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "spec"
+  ]
+}

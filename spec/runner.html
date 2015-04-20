@@ -1,0 +1,153 @@
+<!DOCYTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.17.1.css">
+  <style>
+
+    body {
+      font-family: 'Arial', 'sans-serif';
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+    }
+
+    form.config {
+      background-color: #666;
+      color: #fff;
+    }
+
+    form.config fieldset {
+      border: none;
+      margin-right: 18px;
+      float: left;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      cursor: pointer;
+
+    }
+
+    ul li {
+      list-style-type: none;
+      display: inline-block;
+    }
+
+    ul li a {
+
+      text-decoration: none;
+
+    }
+
+  </style>
+  <script src="/bower_components/qunit/qunit/qunit.js"></script>
+  <script>
+
+    location.getParameterByName = function(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(this.search);
+
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function loadBrowserScripts(scripts) {
+      if (!scripts) {
+        return;
+      } else if (!Array.isArray(scripts)) {
+        loadBrowserScripts(new Array(scripts));
+      } else if (scripts.length == 0) {
+        return;
+      } else {
+        var script = scripts.shift();
+        var scriptel = document.createElement('script');
+
+        scriptel.setAttribute('src', script);
+        scriptel.type = "text/javascript";
+        scriptel.async = false;
+
+        document.body.appendChild(scriptel);
+
+        loadBrowserScripts(scripts);
+      }
+    }
+
+    function waitUntil(func, cb) {
+      func()? cb() : setTimeout(function() { waitUntil(func, cb) }, waitUntil.step);
+    }
+
+    waitUntil.step = 100;
+
+    var $Q = {
+      'modenv' :  location.getParameterByName('modenv') || 'browser'
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      var selids = [ 'modenv'];
+
+      selids.forEach(function(selid) {
+        var elm = document.getElementById(selid);
+
+        elm.value = $Q[selid];
+
+        elm.addEventListener('change', function() {
+          document.forms['config'].submit();
+        });
+      });
+
+      if ($Q['modenv'] == 'amd') {
+
+        loadBrowserScripts('/bower_components/requirejs/require.js');
+
+        waitUntil(function() { return window.hasOwnProperty('requirejs') }, function() {
+          requirejs.config({
+            urlArgs: Date.now(),
+            paths: {
+              'jquery' : '/bower_components/jquery/dist/jquery',
+              'afnum' : '/lib/afnum',
+              'afnum-spec' : 'afnum_spec',
+            }
+          });
+
+          requirejs(['afnum-spec']);
+        });
+
+      } else {
+        loadBrowserScripts([
+          "/bower_components/jquery/dist/jquery.js",
+          "/lib/afnum.js",
+          "afnum_spec.js"
+        ]);
+      }
+    });
+
+
+
+  </script>
+</head>
+
+<body>
+  <form class="config" method="get" id="config">
+    <fieldset>
+      <label>Module Environment</label>
+      <select id="modenv" name="modenv">
+
+        <option value="browser">Plain Browser</option>
+        <option value="amd">AMD [e.g. Require.js]</option>
+      </select>
+    </fieldset>
+    <div style="clear: left"></div>
+  </form>
+
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+</body>
+</html>
