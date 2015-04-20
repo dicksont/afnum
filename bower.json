@@ -5,7 +5,7 @@
   "authors": [
     "Dickson Tam <dicksont650@gmail.com>"
   ],
-  "description": "Alpha-numeric [e.g. spreadsheet] coordinate system",
+  "description": "Alpha-numeric [e.g. spreadsheet] coordinate system as commonly found in spreadsheets",
   "main": "lib/afnum.js",
   "keywords": [
     "letter",
