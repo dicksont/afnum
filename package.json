@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/dicksont/afnum.git"
   },
+  "scripts": {
+    "test" : "qunit -c lib/afnum.js -t spec/afnum_spec.js" 
+  },
   "keywords": [
     "letter",
     "number",
