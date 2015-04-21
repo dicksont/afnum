@@ -5,8 +5,9 @@
     var afnum = require('../lib/afnum.js');
     module.exports = factory(qunit, afnum);
   } else if (typeof define === 'function' && define.amd) { // Require.js & AMD
-    define([ 'afnum'], function(afnum) {
-      factory(QUnit, afnum);
+
+    define([ 'qunit', 'afnum'], function(qunit, afnum) {
+      factory(qunit, afnum);
     });
   } else { // Browser
     factory(QUnit, AFNum);
