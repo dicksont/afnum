@@ -50,7 +50,7 @@
     assert.ok(AFNum.Row(1).increment(0).number == 1, "Row(1).increment(0).number == 1");
     assert.ok(AFNum.Row(1).increment(1).number == 2, "Row(1).increment(1).number == 2");
     assert.ok(AFNum.Row(2).increment(-1).number == 1, "Row(2).increment(-1) == 1");
-    assert.ok(AFNum.Row(1).increment(-1) == null, "Row('1').increment(-1) == null");
+    assert.ok(AFNum.Row(1).increment(-1) == null, "Row(1).increment(-1) == null");
   });
 
 
@@ -72,7 +72,7 @@
   });
 
   QUnit.test( "Row.cellsInRange", function( assert ) {
-    assert.ok(AFNum.Row(1).cellsInRange('A2:B3').strarray().length == 0, "Row(4).cellsInRange('A2:B3').length == 0");
+    assert.ok(AFNum.Row(1).cellsInRange('A2:B3').strarray().length == 0, "Row(1).cellsInRange('A2:B3').length == 0");
 
     var cellstrar = AFNum.Row(2).cellsInRange('A2:B3').strarray();
 
@@ -98,7 +98,7 @@
 
     assert.ok(AFNum.Column('A') instanceof AFNum.Column , "Column('A') instanceof Column");
     assert.ok(AFNum.Column('a') instanceof AFNum.Column , "Column('a') instanceof Column");
-    assert.ok(AFNum.Column('AA') instanceof AFNum.Column , "Column('A') instanceof Column");
+    assert.ok(AFNum.Column('AA') instanceof AFNum.Column , "Column('AA') instanceof Column");
     assert.ok(AFNum.Column(1) instanceof AFNum.Column, "Column(1) instanceof Column");
     assert.ok(AFNum.Column('1') instanceof AFNum.Column, "Column('1') instanceof Column");
 
@@ -130,9 +130,9 @@
 
   QUnit.test("Column.increment", function(assert) {
     assert.ok(AFNum.Column('A').increment(0).string == 'A', "Column('A').increment(0) == 'A'");
-    assert.ok(AFNum.Column('A').increment(1).string == 'B', "Column('B').increment() == 'A'");
+    assert.ok(AFNum.Column('A').increment(1).string == 'B', "Column('A').increment(1) == 'B'");
     assert.ok(AFNum.Column('A').increment(-1) == null, "Column('A').increment(-1) == null");
-    assert.ok(AFNum.Column('B').increment(-1).string == 'A', "Column('A').increment(-1) == 'A'");
+    assert.ok(AFNum.Column('B').increment(-1).string == 'A', "Column('B').increment(-1) == 'A'");
   });
 
   QUnit.test("Column.compare", function(assert) {
@@ -234,7 +234,7 @@
 
   QUnit.test( "Cell.cellsInRange", function( assert ) {
     assert.ok(AFNum.Cell('B2').cellsInRange('A1:A1').cardinality == 0, "Cell('B2').cellsInRange('A1:A1').cardinality == 0");
-    assert.ok(AFNum.Cell('A1').cellsInRange('A1:A1').cardinality == 1, "Cell('B2').cellsInRange('A1:A1').cardinality == 0");
+    assert.ok(AFNum.Cell('A1').cellsInRange('A1:A1').cardinality == 1, "Cell('A1').cellsInRange('A1:A1').cardinality == 0");
     assert.ok(~AFNum.Cell('A1').cellsInRange('A1:A1').strarray().indexOf('A1'), "Cell('A1').cellsInRange('A1:A1').indexOf('A1')");
 
     assert.ok(AFNum.Cell('A1').cellsInRange('A1:B2').cardinality == 1, "Cell('A1').cellsInRange('A1:B2').cardinality == 1");
@@ -327,7 +327,7 @@
     assert.ok(AFNum.Range('A7:A7').hasRow(7) , "Range('A7:A7').hasRow(7)");
     assert.ok(!AFNum.Range('A7:A7').hasRow(8) , "!Range('A7:A7').hasRow(8)");
 
-    assert.ok(!AFNum.Range('B23:A7').hasRow(6) , "Range('B23:A7').hasRow(6)");
+    assert.ok(!AFNum.Range('B23:A7').hasRow(6) , "!Range('B23:A7').hasRow(6)");
     assert.ok(AFNum.Range('B23:A7').hasRow(7) , "Range('B23:A7').hasRow(7)");
     assert.ok(AFNum.Range('B23:A7').hasRow(23) , "Range('B23:A1').hasRow(23)");
     assert.ok(!AFNum.Range('B23:A7').hasRow(24) , "!Range('B23:A1').hasRow(24)");
@@ -394,7 +394,7 @@
     assert.ok(AFNum.Range("A1:A1").extend().cells.matches(AFNum.Range('A1:A1').cells), "Range('A1:A1').extend() == Range('A1:A1')");
     assert.ok(AFNum.Range("A1:A1").extend(0,0).cells.matches(AFNum.Range('A1:A1').cells), "Range('A1:A1').extend(0,0) == Range('A1:A1')");
     assert.ok(AFNum.Range("A1:A1").extend(1,0).cells.matches(AFNum.Range('A1:A2').cells), "Range('A1:A1').extend(1,0) == Range('A1:A2')");
-    assert.ok(AFNum.Range("A1:A1").extend(0,1).cells.matches(AFNum.Range('A1:B1').cells), "Range('A1:A1').extend(0,1) == Range('B1:B2')");
+    assert.ok(AFNum.Range("A1:A1").extend(0,1).cells.matches(AFNum.Range('A1:B1').cells), "Range('A1:A1').extend(0,1) == Range('A1:B1')");
     assert.ok(AFNum.Range("A1:A1").extend(1,1).cells.matches(AFNum.Range('A1:B2').cells), "Range('A1:A1').extend(1,1) == Range('A1:B2')");
     assert.ok(AFNum.Range("A1:B2").extend(1,0).cells.matches(AFNum.Range('A1:B3').cells), "Range('A1:B2').extend(1,0) == Range('A1:B3')");
     assert.ok(AFNum.Range("A1:B2").extend(0,1).cells.matches(AFNum.Range('A1:C2').cells), "Range('A1:B2').extend(0,1) == Range('A1:C2')");
@@ -403,7 +403,7 @@
     assert.ok(AFNum.Range("A1:B2").extend(-1,0).cells.matches(AFNum.Range('A1:B1').cells), "Range('A1:B2').extend(-1,0) == Range('A1:B1')");
     assert.ok(AFNum.Range("A1:B2").extend(0,-1).cells.matches(AFNum.Range('A1:A2').cells), "Range('A1:B2').extend(0,1) == Range('A1:A2')");
     assert.ok(AFNum.Range("A1:B2").extend(-1,-1).cells.matches(AFNum.Range('A1:A1').cells), "Range('A1:B2').extend(-1,1) == Range('A1:A1')");
-    assert.ok(AFNum.Range("A1:B2").extend(-2,-2).cells.matches(AFNum.Range('A1:A1').cells), "Range('A1:B2').extend(-2,2) == Range('A1:A1')");
+    assert.ok(AFNum.Range("A1:B2").extend(-2,-2).cells.matches(AFNum.Range('A1:A1').cells), "Range('A1:B2').extend(-2,-2) == Range('A1:A1')");
 
     assert.ok(AFNum.Range("B2:A1").extend(1,0) == null, "Range('B2:A1').extend(1,0) == null");
     assert.ok(AFNum.Range("B2:A1").extend(0,1) == null, "Range('B2:A1').extend(0,1) == null");
