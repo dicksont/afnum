@@ -2,7 +2,7 @@
   "name": "afnum",
   "main": "lib/afnum.js",
   "description": "Alpha-numeric [e.g. spreadsheet] coordinate system as commonly found in spreadsheets",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "devDependencies": {
     "gulp": "~3.8.11",
     "gulp-bump": "~0.3.0",
