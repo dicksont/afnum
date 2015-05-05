@@ -1,12 +1,12 @@
 {
   "name": "afnum",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "homepage": "https://github.com/dicksont/afnum",
   "authors": [
     "Dickson Tam <dicksont650@gmail.com>"
   ],
   "description": "Alpha-numeric [e.g. spreadsheet] coordinate system as commonly found in spreadsheets",
-  "main": "lib/afnum.js",
+  "main": "afnum.js",
   "keywords": [
     "letter",
     "number",

@@ -2,7 +2,7 @@
 
   if (typeof module !== 'undefined' && module && module.exports) { // Node.js & CommonJS
     var qunit = QUnit || require('qunitjs');
-    var afnum = require('../lib/afnum.js');
+    var afnum = require('../afnum.js');
     module.exports = factory(qunit, afnum);
   } else if (typeof define === 'function' && define.amd) { // Require.js & AMD
 
