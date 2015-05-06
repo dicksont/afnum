@@ -1,4 +1,4 @@
-### [AFNum](README.md)
+### [AFNum](../README.md)
 # Cell
 
 ## .string
