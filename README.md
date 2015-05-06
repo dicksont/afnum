@@ -12,6 +12,8 @@ AFNum provides several types that can be used for spreadsheet coordinate calcula
 
 **[Range](./docs/RANGE.md)** - *A range represents a block of cells in a spreadsheet. It consists of a start and an end.*
 
+**[Collection](./docs/COLLECTION.MD)** - *A collection represents a group of the above types.*
+
 
 # Installation
 AFNum is available as an [npm package](https://www.npmjs.com/package/afnum). Simpy, install with

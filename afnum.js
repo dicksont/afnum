@@ -320,46 +320,46 @@
     return o;
   }
 
-  Collection.prototype.add = function(quad) {
+  Collection.prototype.add = function(aftype) {
 
-    if (quad instanceof Array) {
-      for (var i=0; i < quad.length; i++) {
-        this.add(quad[i]);
+    if (aftype instanceof Array) {
+      for (var i=0; i < aftype.length; i++) {
+        this.add(aftype[i]);
       }
-    } else if (quad instanceof Collection) {
-      this.add(quad.array());
-    } else if (quad = AFNum(quad)) {
-      this.kvstore[quad.string] = quad;
+    } else if (aftype instanceof Collection) {
+      this.add(aftype.array());
+    } else if (aftype = AFNum(aftype)) {
+      this.kvstore[aftype.string] = aftype;
 
     }
 
     return this;
   }
 
-  Collection.prototype.has = function(quad) {
+  Collection.prototype.has = function(aftype) {
 
-    if (quad instanceof Array) {
-      return quad.reduce(function(pv, cv) { return this.has(pv) && this.has(cv); }, true);
-    } else if (quad instanceof Collection) {
-      return this.has(quad.array());
-    } else if (quad = AFNum(quad)){
-      return quad.string in this.kvstore;
+    if (aftype instanceof Array) {
+      return aftype.reduce(function(pv, cv) { return this.has(pv) && this.has(cv); }, true);
+    } else if (aftype instanceof Collection) {
+      return this.has(aftype.array());
+    } else if (aftype = AFNum(aftype)){
+      return aftype.string in this.kvstore;
     }
 
     return false;
 
   }
 
-  Collection.prototype.remove = function(quad) {
+  Collection.prototype.remove = function(aftype) {
 
-    if (quad instanceof Array) {
-      for (var i=0; i < quad.length; i++) {
-        this.remove(quad[i]);
+    if (aftype instanceof Array) {
+      for (var i=0; i < aftype.length; i++) {
+        this.remove(aftype[i]);
       }
-    } else if (quad instanceof Collection) {
-      this.remove(quad.array());
-    } else if (quad = AFNum(quad)) {
-      delete this.kvstore[quad.string];
+    } else if (aftype instanceof Collection) {
+      this.remove(aftype.array());
+    } else if (aftype = AFNum(aftype)) {
+      delete this.kvstore[aftype.string];
     }
 
     return this;
