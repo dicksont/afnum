@@ -1,6 +1,5 @@
 ### AFNum
-[![Build Status](https://travis-ci.org/dicksont/afnum.svg?branch=master)](https://travis-ci.org/dicksont/afnum)
-
+[![Build Status](https://travis-ci.org/dicksont/afnum.svg?branch=master)](https://travis-ci.org/dicksont/afnum) [![npm version](https://badge.fury.io/js/afnum.svg)](http://badge.fury.io/js/afnum)
 
 # Introduction
 AFNum provides several types that can be used for spreadsheet coordinate calculation. They are:
