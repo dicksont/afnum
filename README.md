@@ -14,7 +14,7 @@ AFNum provides several types that can be used for spreadsheet coordinate calcula
 
 **[Collection](./docs/COLLECTION.MD)** - *A collection represents a group of the above types.*
 
-See [wiki](/dicksont/afnum/wiki) for [additional information](/dicksont/afnum/wiki).
+See [wiki](https://github.com/dicksont/afnum/wiki) for [additional information](https://github.com/dicksont/afnum/wiki).
 
 
 # Installation
