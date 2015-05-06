@@ -14,6 +14,8 @@ AFNum provides several types that can be used for spreadsheet coordinate calcula
 
 **[Collection](./docs/COLLECTION.MD)** - *A collection represents a group of the above types.*
 
+See [wiki](wiki) for [additional information](wiki).
+
 
 # Installation
 AFNum is available as an [npm package](https://www.npmjs.com/package/afnum). Simpy, install with
