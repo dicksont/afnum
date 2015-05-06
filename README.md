@@ -12,7 +12,7 @@ AFNum provides several types that can be used for spreadsheet coordinate calcula
 
 **[Range](https://github.com/dicksont/afnum/wiki/Range)** - *A range represents a block of cells in a spreadsheet. It consists of a start and an end.*
 
-**[Collection]((https://github.com/dicksont/afnum/wiki/Collection)** - *A collection represents a group of the above types.*
+**[Collection](https://github.com/dicksont/afnum/wiki/Collection)** - *A collection represents a group of the above types.*
 
 See [wiki](https://github.com/dicksont/afnum/wiki) for [API documentation](https://github.com/dicksont/afnum/wiki).
 
