@@ -2,11 +2,11 @@
   "name": "afnum",
   "main": "afnum.js",
   "description": "Alpha-numeric [e.g. spreadsheet] coordinate system as commonly found in spreadsheets",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "devDependencies": {
     "gulp": "~3.8.11",
     "gulp-bump": "~0.3.0",
-    "qunit": "0.7.6"
+    "qunit": "~0.7.6"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
     "test": "qunit -c afnum.js -t spec/afnum_spec.js"
   },
   "keywords": [
+    "cell",
     "letter",
     "number",
     "table",

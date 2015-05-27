@@ -131,11 +131,13 @@
   Object.defineProperty(Row.prototype, 'string', {
     get: function() {
       return this.number + "";
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Row.prototype, 'type', {
-    value: "row"
+    value: "row",
+    enumerable: true
   });
 
   function Column(colstr) {
@@ -224,7 +226,8 @@
       }
 
       return rv;
-    }
+    },
+    enumerable: true
   });
 
   function Cell(qstr) {
@@ -302,7 +305,8 @@
   Object.defineProperty(Cell.prototype, 'string', {
     get: function() {
       return this.column.string + this.row.string;
-    }
+    },
+    enumerable: true
   });
 
 
@@ -394,7 +398,8 @@
   Object.defineProperty(Collection.prototype, 'cardinality', {
     get: function() {
       return Object.keys(this.kvstore).length;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Collection.prototype, "maxRow", {
@@ -418,7 +423,8 @@
       }
 
       return maxrow;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Collection.prototype, "maxColumn", {
@@ -442,7 +448,8 @@
       }
 
       return maxcol;
-    }
+    },
+    enumerable: true
   });
 
   function Range(rstr) {
@@ -498,50 +505,58 @@
   Object.defineProperty(Range.prototype, 'string', {
     get: function() {
       return this.start.string + ":" + this.end.string;
-    }
+    },
+    enumerable: true
   });
 
 
   Object.defineProperty(Range.prototype, 'rightColumn', {
     get: function() {
       return this.start.column.number > this.end.column.number? this.start.column : this.end.column;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'leftColumn', {
     get: function() {
       return this.start.column.number < this.end.column.number? this.start.column : this.end.column;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'topRow', {
     get: function() {
       return this.start.row.number < this.end.row.number? this.start.row : this.end.row;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'bottomRow', {
     get: function() {
       return this.start.row.number > this.end.row.number? this.start.row : this.end.row;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'width', {
     get: function() {
       return this.rightColumn.number - this.leftColumn.number + 1;
-    }
+    },
+    enumerable: true
   })
 
   Object.defineProperty(Range.prototype, 'height', {
     get: function() {
       return this.bottomRow.number - this.topRow.number + 1;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'size', {
     get: function() {
       return this.height * this.width;
-    }
+    },
+    enumerable: true
   });
 
   Range.prototype.hasColumn = function(col) {
@@ -577,7 +592,8 @@
       }
 
       return rows;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'columns', {
@@ -589,7 +605,8 @@
       }
 
       return columns;
-    }
+    },
+    enumerable: true
   });
 
   Object.defineProperty(Range.prototype, 'cells', {
@@ -603,7 +620,8 @@
       }
 
       return cells;
-    }
+    },
+    enumerable: true
   });
 
   Range.prototype.cellsInRange = function(range) {
