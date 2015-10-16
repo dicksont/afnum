@@ -13,7 +13,7 @@
     "url": "https://github.com/dicksont/afnum.git"
   },
   "scripts": {
-    "test": "qunit -c afnum.js -t spec/afnum_spec.js"
+    "test": "qunit -c afnum.js -t spec/afnum_spec.js spec/validate_spec.js"
   },
   "keywords": [
     "cell",

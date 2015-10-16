@@ -473,6 +473,10 @@
 
     }
 
+  Range.isValid = function(str) {
+    return Range.parse(str) != null
+  }
+
   Range.parse = function(rstr) {
     if (typeof rstr != 'string') return null;
 
